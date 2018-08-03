@@ -1,11 +1,13 @@
 const express = require('express')
 const app = express()
-const bodyParser = require('bodyParser')
+const bodyParser = require('body-parser')
 const cors = require('cors')
 
 app.use(cors())
 app.use(bodyParser.json())
 
-
+app.get('/', (request,response,next) => {
+    response.send('Hello')
+})
 
 module.exports = app
